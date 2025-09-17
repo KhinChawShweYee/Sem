@@ -3,3 +3,6 @@
 [![LICENSE](https://img.shields.io/github/license/KhinChawShweYee/sem.svg?style=flat-square)](https://github.com/KhinChawShweYee/Sem/blob/master/LICENSE)
 
 [![Releases](https://img.shields.io/github/release/KhinChawShweYee/Sem/all.svg?style=flat-square)](https://github.com/KhinChawShweYee/Sem/releases)
+
+
+![GitHub Workflow Status](https://img.shields.io/github/actions/workflow/status/KhinChawShweYee/sem/main.yml?branch=develop&style=flat-square)
