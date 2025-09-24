@@ -35,7 +35,7 @@ public class App
                 // Wait a bit for db to start
                 Thread.sleep(30000);
                 // Connect to database
-                con = DriverManager.getConnection("jdbc:mysql://localhost:3306/employees?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=UTC",
+                con = DriverManager.getConnection("jdbc:mysql://db:3307/employees?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=UTC",
                         "root", "example");
                 System.out.println("Successfully connected");
                 break;
@@ -96,7 +96,9 @@ public class App
                 return emp;
             }
             else
-                return null;
+              {System.out.println("no success");
+                  return null;}
+
         }
         catch (Exception e)
         {
@@ -106,6 +108,23 @@ public class App
         }
     }
 
+    public void displayEmployee(Employee emp)
+    {
+        if (emp != null)
+        {
+            System.out.println(
+                    emp.emp_no + " "
+                            + emp.first_name + " "
+                            + emp.last_name + "\n"
+                            + emp.title + "\n"
+                            + "Salary:" + emp.salary + "\n"
+                            + emp.dept_name + "\n"
+                            + "Manager: " + emp.manager + "\n");
+        }
+        else
+            System.out.println("Employee is null");
+    }
+
     public static void main(String[] args)
     {
         // Create new Application
@@ -113,6 +132,10 @@ public class App
 
         // Connect to database
         a.connect();
+        // Get Employee
+        Employee emp = a.getEmployee(490758);
+        // Display results
+        a.displayEmployee(emp);
 
         // Disconnect from database
         a.disconnect();
